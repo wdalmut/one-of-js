@@ -1,0 +1,30 @@
+{
+  "name": "@wdalmut/one-of",
+  "version": "0.0.1",
+  "description": "Resolve if one promise resolve or reject",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wdalmut/one-of-js.git"
+  },
+  "author": "Walter Dal Mut <walter.dalmut@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wdalmut/one-of-js/issues"
+  },
+  "homepage": "https://github.com/wdalmut/one-of-js#readme",
+  "devDependencies": {
+    "@wdalmut/basic-auth": "0.0.1",
+    "@wdalmut/mini-auth": "0.0.2",
+    "@wdalmut/token-auth": "0.0.1",
+    "express": "^4.16.3",
+    "jasmine": "^3.1.0",
+    "supertest": "^3.1.0"
+  },
+  "dependencies": {
+    "q": "^1.5.1"
+  }
+}
