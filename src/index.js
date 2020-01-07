@@ -1,15 +1,30 @@
-module.exports = (list) => {
+module.exports = (list, options = {timeout: 3000}) => {
   return (req) => {
     return Promise.all(list
       .map(fn => {
-        return fn(req)
+        let timeoutId = false
+
+        return Promise.race([
+            fn(req),
+            new Promise((_, reject) => {
+              id = setTimeout(() => reject("Time limit exeeded"), options.timeout || 3000)
+            }
+          )])
           .then(data => {
+            if (timeoutId !== false) {
+              clearTimeout(id)
+            }
+
             return Promise.resolve({
               success: true,
               data,
             })
           })
           .catch(data => {
+            if (timeoutId !== false) {
+              clearTimeout(id)
+            }
+
             return Promise.resolve({
               success: false,
               data,

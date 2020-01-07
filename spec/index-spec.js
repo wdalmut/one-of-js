@@ -136,7 +136,23 @@ describe("One of", () => {
           done()
         })
       })
-    })
+    });
 
+    [
+      { input: [ () => new Promise(resolve => {
+        setTimeout(() => resolve("OK"), 1500)
+      }) ], output: [] },
+    ].map(({input, output}) => {
+      it("should fail on timeouts", (done) => {
+        one_of(input, {timeout: 150})({})
+        .then(data => {
+          done(new Error("Should not pass!"))
+        })
+        .catch(err => {
+          expect(err.message).toBe("No one promise returns correctly")
+          done()
+        })
+      })
+    })
   })
 });
