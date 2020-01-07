@@ -1,6 +1,6 @@
 {
   "name": "@wdalmut/one-of",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Resolve if one promise resolve or reject",
   "main": "src/index.js",
   "scripts": {
