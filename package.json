@@ -1,6 +1,6 @@
 {
   "name": "@wdalmut/one-of",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Resolve if one promise resolve or reject",
   "main": "src/index.js",
   "scripts": {
@@ -24,7 +24,5 @@
     "jasmine": "^3.1.0",
     "supertest": "^3.1.0"
   },
-  "dependencies": {
-    "q": "^1.5.1"
-  }
+  "dependencies": {}
 }
