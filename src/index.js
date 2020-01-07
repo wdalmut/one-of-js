@@ -7,12 +7,12 @@ module.exports = (list, options = {timeout: 3000}) => {
         return Promise.race([
             fn(req),
             new Promise((_, reject) => {
-              id = setTimeout(() => reject("Time limit exeeded"), options.timeout || 3000)
+              timeoutId = setTimeout(() => reject("Time limit exeeded"), options.timeout || 3000)
             }
           )])
           .then(data => {
             if (timeoutId !== false) {
-              clearTimeout(id)
+              clearTimeout(timeoutId)
             }
 
             return Promise.resolve({
@@ -22,7 +22,7 @@ module.exports = (list, options = {timeout: 3000}) => {
           })
           .catch(data => {
             if (timeoutId !== false) {
-              clearTimeout(id)
+              clearTimeout(timeoutId)
             }
 
             return Promise.resolve({

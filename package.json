@@ -4,7 +4,9 @@
   "description": "Resolve if one promise resolve or reject",
   "main": "src/index.js",
   "scripts": {
-    "test": "./node_modules/.bin/jasmine"
+    "test": "./node_modules/.bin/jasmine",
+    "coverage": "./node_modules/.bin/nyc npm test",
+    "report": "./node_modules/.bin/nyc report --reporter=text-lcov > coverage.lcov"
   },
   "repository": {
     "type": "git",
@@ -20,9 +22,16 @@
     "@wdalmut/basic-auth": "0.0.1",
     "@wdalmut/mini-auth": "0.0.2",
     "@wdalmut/token-auth": "0.0.1",
+    "codecov": "^3.6.1",
     "express": "^4.16.3",
     "jasmine": "^3.1.0",
+    "nyc": "^15.0.0",
     "supertest": "^3.1.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "nyc": {
+    "exclude": [
+      "spec/**"
+    ]
+  }
 }
