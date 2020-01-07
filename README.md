@@ -1,6 +1,7 @@
 # One Of
 
 [![Build Status](https://travis-ci.org/wdalmut/one-of-js.svg?branch=master)](https://travis-ci.org/wdalmut/one-of-js)
+[![codecov](https://codecov.io/gh/wdalmut/one-of-js/branch/master/graph/badge.svg)](https://codecov.io/gh/wdalmut/one-of-js)
 
 ```sh
 npm install --save @wdalmut/one-of
